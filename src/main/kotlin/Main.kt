@@ -1,10 +1,9 @@
 fun main() {
-    val likes = 100 // Здесь можно изменить значение переменной likes
+    val likes = 121 // Здесь можно изменить значение переменной likes
 
-    val message = when (likes) {
-        in 0..9 -> "Кажется,никому не понравилось"
-        in 10..99 -> "Понравилось: $likes человек"
-        else -> "Понравилось: $likes человек"
+    val message = when {
+        likes % 10 == 1 && likes % 100 != 11 -> "Понравилось $likes человеку"
+        else -> "Понравилось $likes людям"
     }
 
     println(message)
